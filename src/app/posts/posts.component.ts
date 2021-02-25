@@ -1,6 +1,6 @@
 import { Component,OnInit, Input } from '@angular/core';
 import {MatDialog} from '@angular/material/dialog';
-import {PostDetailComponent} from '../posts-details/post-details.component';
+import {PostDetailComponent} from '../posts-details/posts-details.component';
 import { InstagramApiService } from '../instagram-api.service';
 import { createOfflineCompileUrlResolver } from '@angular/compiler';
 
@@ -10,14 +10,14 @@ import { createOfflineCompileUrlResolver } from '@angular/compiler';
     styleUrls: ['./posts.component.css']
 })
 export class PostsComponent implements OnInit {
-     pictureUrl: string;
+     pictureUrl!: string;
     constructor(public dialog: MatDialog, private apiService: InstagramApiService) { }
 
     ngOnInit() {
         
     }
     @Input()
-    posts: Post;
+    posts!: Post;
     onclick(posts: Post){
         const dialogRef = this.dialog.open(PostDetailComponent, {
             width: '750px',
